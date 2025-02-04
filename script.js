@@ -21,7 +21,7 @@ const monsterName = document.querySelector("#monsterName");
 const monsterHealthText = document.querySelector("#monsterHealth");
 
 function goStore() {
-  console.log("Going to store.");
+  button1.innerText = "Buy 10 health (10 gold)";
 }
 goStore();
 
@@ -37,5 +37,7 @@ fightDragon();
 
 // initialize buttons
 
-// aquí estamos primero diciendo que va hacer el botón y luego lo que guarda a hacer ese botón
-button1.onclick = goStore();
+// aquí estamos primero diciendo que va hacer el botón y luego lo que guarda a hacer ese botón (no se debe usar los ())
+button1.onclick = goStore;
+button2.onclick = goCave;
+button3.onclick = fightDragon;
