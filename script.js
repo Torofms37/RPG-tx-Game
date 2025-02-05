@@ -66,7 +66,6 @@ function update(location) {
   text.innerText = location.text;
 }
 
-
 //TODO: goTown
 function goTown() {
   update(locations[0]);
@@ -79,7 +78,7 @@ function goStore() {
 
 // TODO: goCave
 function goCave() {
-  button1.innerText = "Buy weapon (30 gold)";
+  update(locations[2]);
 }
 
 // TODO: fightDragon
@@ -96,7 +95,10 @@ button3.onclick = fightDragon;
 
 //functions about buyH, buyW & gotT
 
-function buyHealth() {}
+function buyHealth() {
+  goldText.innerText = gold -= 10;
+  healthText.innerText = health += 10;
+}
 function buyWeapon() {}
 
 function fightSlime() {
