@@ -20,43 +20,72 @@ const monsterName = document.querySelector("#monsterName");
 
 const monsterHealthText = document.querySelector("#monsterHealth");
 
+
+const locations = [
+  {
+    name: "town square",
+    "button text": ["Go to store", "Go to cave", "Fight dragon"],
+    "button functions": [
+      goStore,
+      goCave,
+      fightDragon,
+    ],
+    text: 
+      "You are in the town square. You see a sign that says \"Store\".",
+    },
+    {
+      name: "store",
+      "button text": ["Buy 10 health (10 gold)", "Buy weapon (30 gold)", "Go to town square"],
+      "button functions": [
+        buyHealth,
+        buyWeapon, 
+        goTown,
+      ],
+      text: "You enter the store.",
+    },
+    {
+      name: "cave",
+      "button text": ["Fight slime", "Fight fanged beast", "Go to town square"],
+      "button functions": [
+        fightSlime,
+        fightBeast,
+        goTown
+      ],
+      text: "You enter the cave. You see some monsters."
+    }
+];
+
+function update(location) {
+  // accede a location, objeto button y primer array
+  button1.innerText = location["button text"][0];
+  button2.innerText = location["button text"][1];
+  button3.innerText = location["button text"][2];
+  button1.onclick = location["button functions"][0];
+  button2.onclick = location["button functions"][1];
+  button3.onclick = location["button functions"][2];
+  text.innerText = location.text;
+}
+
+
 //TODO: goTown
 function goTown() {
-  button1.innerText = "Go to store";
-  button2.innerText = "Go to cave";
-  button3.innerText = "Fight dragon";
-  button1.onclick = goStore;
-  button2.onclick = goCave;
-  button3.onclick = fightDragon;
-  text.innerText = "You are in the town square. You see a sign that says \"Store\". ";
+  update(locations[0]);
 }
 
 // TODO: goStore
 function goStore() {
-  button1.innerText = "Buy 10 health (10 gold)";
-  button1.onclick = buyHealth;
-  
-  button2.innerText = "Buy weapon (30 gold)";
-  button2.onclick = buyWeapon;
-  
-  button3.innerText = "Go to town square";
-  button3.onclick = goTown;
-
-  text.innerText  = "You enter the store."
+  update(locations[1]);
 }
-goStore();
 
 // TODO: goCave
 function goCave() {
   button1.innerText = "Buy weapon (30 gold)";
 }
-goCave();
 
 // TODO: fightDragon
 function fightDragon() {
   button1.innerText = "Go to town square";
 }
-fightDragon();
 
 // initialize buttons
 
@@ -67,9 +96,12 @@ button3.onclick = fightDragon;
 
 //functions about buyH, buyW & gotT
 
-function buyHealth() {
+function buyHealth() {}
+function buyWeapon() {}
+
+function fightSlime() {
   
 }
-function buyWeapon() {
+function fightBeast() {
   
 }
