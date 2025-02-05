@@ -20,18 +20,41 @@ const monsterName = document.querySelector("#monsterName");
 
 const monsterHealthText = document.querySelector("#monsterHealth");
 
+//TODO: goTown
+function goTown() {
+  button1.innerText = "Go to store";
+  button2.innerText = "Go to cave";
+  button3.innerText = "Fight dragon";
+  button1.onclick = goStore;
+  button2.onclick = goCave;
+  button3.onclick = fightDragon;
+  text.innerText = "You are in the town square. You see a sign that says \"Store\". ";
+}
+
+// TODO: goStore
 function goStore() {
   button1.innerText = "Buy 10 health (10 gold)";
+  button1.onclick = buyHealth;
+  
+  button2.innerText = "Buy weapon (30 gold)";
+  button2.onclick = buyWeapon;
+  
+  button3.innerText = "Go to town square";
+  button3.onclick = goTown;
+
+  text.innerText  = "You enter the store."
 }
 goStore();
 
+// TODO: goCave
 function goCave() {
-  console.log("Going to cave.");
+  button1.innerText = "Buy weapon (30 gold)";
 }
 goCave();
 
+// TODO: fightDragon
 function fightDragon() {
-  console.log("Fighting dragon.");
+  button1.innerText = "Go to town square";
 }
 fightDragon();
 
@@ -41,3 +64,12 @@ fightDragon();
 button1.onclick = goStore;
 button2.onclick = goCave;
 button3.onclick = fightDragon;
+
+//functions about buyH, buyW & gotT
+
+function buyHealth() {
+  
+}
+function buyWeapon() {
+  
+}
